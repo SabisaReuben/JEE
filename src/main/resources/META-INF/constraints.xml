@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mappings xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
+   <!-- <bean class="com.jee.EducationalMaterial">
+        <field name="author">
+            <constraint annotation="com.jee.Length">
+                <message>The minimum required length is 4</message>
+                <element name="min">4</element>
+            </constraint>
+        </field>
+    </bean>-->
+</constraint-mappings>

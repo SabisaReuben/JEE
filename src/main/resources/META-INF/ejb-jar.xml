@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd"
+         version="3.2">
+    <enterprise-beans>
+        <session>
+            <ejb-name>BookEJB</ejb-name>
+            <remote>com.jee.persistence.BookRemote</remote>
+            <local>com.jee.persistence.BookLocal</local>
+            <ejb-class>com.jee.persistence.BookEJB</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Container</transaction-type>
+
+            <env-entry>
+                <!--This can be retrieved on ejb by using @Resource(name  ="currency_type")-->
+
+                <env-entry-name>currency_type</env-entry-name>
+                <env-entry-type>java.lang.String</env-entry-type>
+                <env-entry-value>KSH</env-entry-value>
+            </env-entry>
+
+        </session>
+        <session>
+            <ejb-name>BookCache</ejb-name>
+            <ejb-class>com.jee.persistence.BookCache</ejb-class>
+            <session-type>Singleton</session-type>
+            <transaction-type>Container</transaction-type>
+        </session>
+        <session>
+            <ejb-name>ShoppingCartEJB</ejb-name>
+            <ejb-class>com.jee.persistence.ShoppingCartEJB</ejb-class>
+            <session-type>Stateful</session-type>
+            <transaction-type>Container</transaction-type>
+
+        </session>
+        <session>
+            <ejb-name>TrEJB</ejb-name>
+            <ejb-class>com.jee.persistence.TxEJB</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Bean</transaction-type>
+        </session>
+    </enterprise-beans>
+
+</ejb-jar>
